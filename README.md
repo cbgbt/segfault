@@ -1,5 +1,6 @@
 segfault
 ========
+[![Build Status](https://travis-ci.org/cbgbt/segfault.svg?branch=master)](https://travis-ci.org/cbgbt/segfault)
 Sometimes you need errors and even BaseException just isn't enough! For those
 times when you need something truly awful, try segfault!
 
