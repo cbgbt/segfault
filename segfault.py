@@ -1,4 +1,5 @@
 import ctypes
+import sys
 
 
 POINTER_SKIP_INTERVAL = 256
@@ -13,3 +14,17 @@ def segfault():
     while True:
         pointer[ndx] = 0
         ndx += POINTER_SKIP_INTERVAL
+
+
+class Segfault(RuntimeError):
+    pass
+
+
+def handle_segfault_exception(exctype, value, trace):
+    if isinstance(value, Segfault):
+        segfault()
+    else:
+        sys_exc_hook(exctype, value, trace)
+
+sys_exc_hook = sys.excepthook
+sys.excepthook = handle_segfault_exception
