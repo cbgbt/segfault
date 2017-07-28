@@ -3,7 +3,7 @@
 FAIL=0
 
 python test/test_raise.py
-if [ $? -ne 139 ]; then
+if [ ! $? -gt 128 ]; then
     echo "test_raise.py did not segfault"
     FAIL=1
 else
@@ -11,7 +11,7 @@ else
 fi
 
 python test/test_call.py
-if [ $? -ne 139 ]; then
+if [ ! $? -gt 128 ]; then
     echo "test_raise.py did not segfault"
     FAIL=1
 else
