@@ -8,5 +8,5 @@ setup(
     description="A library that makes the Python interpreter segfault.",
     license="MIT",
     keywords="segfault",
-    py_modules=['segfault'],
+    py_modules=['segfault', 'satire'],
 )
