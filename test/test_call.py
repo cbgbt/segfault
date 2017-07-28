@@ -1,0 +1,3 @@
+import segfault
+
+segfault.segfault()
